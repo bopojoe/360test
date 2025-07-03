@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>360 Viewer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://unpkg.com/photo-sphere-viewer@5/dist/photo-sphere-viewer.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/photo-sphere-viewer@5/dist/photo-sphere-viewer.css" />
   <style>
     html, body {
       margin: 0;
       height: 100%;
+      overflow: hidden;
     }
     #viewer {
       width: 100%;
@@ -18,12 +19,14 @@
 </head>
 <body>
   <div id="viewer"></div>
-  <script src="https://unpkg.com/three@0.143.0/build/three.min.js"></script>
-  <script src="https://unpkg.com/photo-sphere-viewer@5/dist/photo-sphere-viewer.js"></script>
-  <script>
-    const viewer = new PhotoSphereViewer.Viewer({
+
+  <script type="module">
+    import PhotoSphereViewer from 'https://unpkg.com/photo-sphere-viewer@5/dist/photo-sphere-viewer.module.js';
+    import 'https://unpkg.com/three@0.143.0/build/three.module.js';
+
+    const viewer = new PhotoSphereViewer({
       container: document.getElementById('viewer'),
-      panorama: 'assets/panorama.jpg',
+      panorama: 'assets/panorama.JPG',
     });
   </script>
 </body>
